@@ -1907,10 +1907,12 @@ ul.mega-menu {
 		header nav.gla_transp_nav {
 			background-color: rgba(255,255,255,0);
 			color: #fff;
+			
 			border-bottom: 1px solid rgba(255,255,255,0.05);
 		}
 			header nav.gla_transp_nav a {
 				color: #fff;
+				text-shadow: 2px 2px #adadad;
 			}
 			.gla_first_step header nav.gla_transp_nav {
 				background-color: rgba(255,255,255,0.9);
