@@ -2,16 +2,392 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Redirecting...</title>
-  <script>
-    // Automatically redirect to a specific domain
-    window.onload = function () {
-      window.location.href = "https://meghanandryanhills.com";
-    };
-  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Clixel Games | Independent Video Game Studio – Eastbourne, East Sussex</title>
+  <meta name="description" content="Clixel Games is an independent video game studio based in Eastbourne, East Sussex. Our upcoming release is 'Shadows Below' – a submarine exploration survival game." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0f14;
+      --bg-elev: #121923;
+      --text: #e6edf3;
+      --muted: #9fb0c3;
+      --accent: #57b6ff;
+      --accent-2: #5cffd4;
+      --card: #0f141b;
+      --border: #273343;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 16px;
+      --maxw: 1200px;
+    }
+    @media (prefers-color-scheme: light) {
+      :root { --bg:#f6f8fb; --bg-elev:#ffffff; --text:#0b1420; --muted:#546273; --card:#ffffff; --border:#dde4ee; --shadow: 0 8px 24px rgba(0,0,0,.08);} 
+      header.nav { backdrop-filter:saturate(140%) blur(8px); background: rgba(255,255,255,.7);}  
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:var(--maxw);margin-inline:auto;padding:0 20px}
+
+    /* Header */
+    header.nav{position:sticky;top:0;z-index:50;background:rgba(11,15,20,.75);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid var(--border)}
+    .nav-wrap{display:flex;align-items:center;justify-content:space-between;min-height:68px;gap:12px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.4px}
+    .brand .logo{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:grid;place-items:center;color:#00131e;font-weight:900;box-shadow:var(--shadow)}
+    nav ul{list-style:none;display:flex;gap:18px;margin:0;padding:0}
+    nav a{color:var(--text);opacity:.9;font-weight:600}
+    .cta-btn{padding:10px 14px;border:1px solid var(--border);border-radius:12px;background:linear-gradient(180deg, var(--bg-elev), var(--card));box-shadow:var(--shadow)}
+
+    /* Hero */
+    .hero{position:relative;padding:72px 0 36px;overflow:hidden}
+    .hero-inner{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center}
+    .hero h1{font-size:clamp(28px,4vw,44px);line-height:1.1;margin:0 0 10px}
+    .badge{display:inline-flex;align-items:center;gap:8px;background:rgba(87,182,255,.14);border:1px solid var(--border);padding:8px 12px;border-radius:999px;color:var(--accent);font-weight:700;font-size:13px}
+    .hero p{color:var(--muted);max-width:58ch}
+    .hero .art{position:relative;border-radius:20px;overflow:hidden;border:1px solid var(--border);background:radial-gradient(120% 120% at 80% 20%, rgba(92,255,212,.14), transparent 40%), linear-gradient(180deg, #061018, #0c1520)}
+    .hero .art::after{content:"";position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1529694157878-64a2818090b8?q=80&w=1600&auto=format&fit=crop') center/cover;opacity:.35;mix-blend:screen}
+    .hero .buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+    .btn{display:inline-flex;align-items:center;gap:10px;border-radius:14px;padding:12px 16px;border:1px solid var(--border);background:var(--card);color:var(--text);font-weight:700;box-shadow:var(--shadow)}
+    .btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#00131e}
+
+    /* Sections */
+    section{padding:40px 0}
+    h2.sec{font-size:clamp(20px,3vw,30px);margin:0 0 16px}
+    p.lead{color:var(--muted);max-width:70ch}
+
+    /* Games Grid */
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+    .card{grid-column:span 12;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;min-height:100%;box-shadow:var(--shadow)}
+    @media (min-width:700px){.card{grid-column:span 6}}
+    @media (min-width:1050px){.card{grid-column:span 4}}
+    .card .cover{aspect-ratio:16/9;background:#09131c url('https://images.unsplash.com/photo-1529694157878-64a2818090b8?q=80&w=1200&auto=format&fit=crop') center/cover}
+    .card .body{padding:14px 14px 16px;display:flex;flex-direction:column;gap:10px}
+    .tags{display:flex;gap:8px;flex-wrap:wrap}
+    .tag{font-size:12px;padding:6px 10px;border:1px solid var(--border);border-radius:999px;color:var(--muted)}
+    .meta{color:var(--muted);font-size:14px}
+    .card .actions{margin-top:auto;display:flex;gap:10px;flex-wrap:wrap}
+
+    /* About + Contact */
+    .about{display:grid;gap:18px;grid-template-columns:1fr;}
+    @media (min-width:900px){.about{grid-template-columns:1.2fr .8fr}}
+    .panel{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+    form label{display:block;margin:.5rem 0 .25rem}
+    input,textarea{width:100%;padding:12px;border-radius:12px;border:1px solid var(--border);background:var(--bg-elev);color:var(--text)}
+    button[type=submit]{margin-top:10px}
+
+    /* Footer */
+    footer{border-top:1px solid var(--border);padding:24px 0;color:var(--muted)}
+
+    /* Modal */
+    dialog{width:min(800px,95vw);border:none;border-radius:18px;box-shadow:var(--shadow);padding:0;background:var(--bg-elev);color:var(--text)}
+    dialog::backdrop{background:rgba(0,0,0,.6)}
+    .modal-head{display:flex;justify-content:space-between;align-items:center;padding:16px;border-bottom:1px solid var(--border)}
+    .modal-body{padding:16px;display:grid;gap:14px}
+    .close-x{background:none;border:none;color:var(--muted);font-size:22px;cursor:pointer}
+
+    /* Utility */
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  </style>
 </head>
 <body>
-  <p>If you are not redirected automatically, <a href="https://meghanandryanhills.com">click here</a>.</p>
+  <header class="nav">
+    <div class="container nav-wrap">
+      <a class="brand" href="#home" aria-label="Clixel Games home">
+        <div class="logo" aria-hidden="true">C</div>
+        <span>Clixel Games</span>
+      </a>
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="#games">Games</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#press">Press</a></li>
+          <li><a href="#contact" class="cta-btn">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home" class="container">
+    <!-- HERO / FEATURED TITLE -->
+    <section class="hero" aria-label="Featured Game">
+      <div class="hero-inner">
+        <div>
+          <span class="badge">Upcoming • 2026</span>
+          <h1>Shadows Below</h1>
+          <p class="lead">Descend beneath the waves in a <strong>submarine exploration survival</strong> game. Chart the abyss, manage oxygen and power, salvage the unknown, and uncover what lurks in the dark.</p>
+          <div class="buttons">
+            <a class="btn primary" href="#games" data-open-game="shadows-below">Learn more</a>
+            <a class="btn" href="#newsletter">Wishlist / Subscribe</a>
+          </div>
+        </div>
+        <div class="art" aria-hidden="true" style="aspect-ratio:16/10;border:1px solid var(--border);"></div>
+      </div>
+    </section>
+
+    <!-- GAMES -->
+    <section id="games" aria-labelledby="games-title">
+      <h2 class="sec" id="games-title">Our Games</h2>
+      <p class="lead">Browse our current and upcoming titles.</p>
+      <div class="grid" id="games-grid" role="list"></div>
+    </section>
+
+    <!-- ABOUT / PRESS / CONTACT -->
+    <section id="about" class="about">
+      <article class="panel">
+        <h2 class="sec">About Clixel Games</h2>
+        <p>We’re an independent studio based in <strong>Eastbourne, East Sussex (UK)</strong>. We craft atmospheric, systems‑driven experiences with approachable scope and a strong sense of place. Our pipeline emphasises rapid prototyping, player feedback, and clean, readable design.</p>
+        <p>Clixel Games is currently focused on <em>Shadows Below</em>, with additional prototypes in R&amp;D. Want to collaborate, preview builds, or chat? We’d love to hear from you.</p>
+      </article>
+      <aside id="press" class="panel">
+        <h2 class="sec">Press & Assets</h2>
+        <ul>
+          <li>Press kit: <a href="#" aria-disabled="true" title="Coming soon">Coming soon</a></li>
+          <li>Brand/Logo: <a href="#" aria-disabled="true" title="Coming soon">Coming soon</a></li>
+          <li>Trailer: <a href="#" aria-disabled="true" title="Coming soon">Coming soon</a></li>
+        </ul>
+        <p class="meta">For press enquiries, use the contact form and select <em>Press</em>.</p>
+      </aside>
+    </section>
+
+    <section id="contact" class="about">
+      <div class="panel">
+        <h2 class="sec">Contact</h2>
+        <form id="contact-form" action="https://formspree.io/f/mkgqqrjw" method="POST" novalidate>
+          <label for="name">Name</label>
+          <input id="name" name="name" autocomplete="name" required placeholder="Your name" />
+          
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required placeholder="you@example.com" />
+          
+          <label for="type">Enquiry Type</label>
+          <input id="type" name="type" list="type-list" placeholder="General / Press / Business" />
+          <datalist id="type-list">
+            <option value="General"></option>
+            <option value="Press"></option>
+            <option value="Business"></option>
+          </datalist>
+          
+          <label for="msg">Message</label>
+          <textarea id="msg" name="message" rows="5" placeholder="How can we help?"></textarea>
+
+          <label style="display:flex;gap:.5rem;align-items:center;margin-top:.5rem">
+            <input type="checkbox" name="consent" required />
+            I consent to Clixel Games storing my details to contact me.
+          </label>
+
+          <input type="hidden" name="_subject" value="Clixel Games – Contact" />
+          <input type="hidden" name="_template" value="table" />
+          <button class="btn primary" type="submit">Send</button>
+          <p id="form-status" class="meta" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+      <div class="panel" id="newsletter">
+        <h2 class="sec">Newsletter</h2>
+        <p>Get devlogs and launch updates for <em>Shadows Below</em> and future titles.</p>
+        <form id="news-form" action="https://formspree.io/f/mwprrolp" method="POST" class="inline" novalidate>
+          <label for="news-email" class="sr-only">Email</label>
+          <input id="news-email" name="email" type="email" placeholder="you@example.com" required />
+          <input type="hidden" name="list" value="Shadows Below Newsletter" />
+
+          <label style="display:flex;gap:.5rem;align-items:center;margin-top:.5rem">
+            <input type="checkbox" name="consent" required />
+            I agree to receive email updates and understand I can unsubscribe at any time.
+          </label>
+
+          <button class="btn" type="submit">Subscribe</button>
+          <p id="news-status" class="meta" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+        <p>© <span id="year"></span> Clixel Games • Eastbourne, East Sussex</p>
+        <p class="meta">Follow: <a href="#" aria-disabled="true">Twitter/X</a> · <a href="#" aria-disabled="true">YouTube</a> · <a href="#" aria-disabled="true">Itch.io</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Game Details Modal -->
+  <dialog id="game-modal" aria-labelledby="modal-title">
+    <div class="modal-head">
+      <h3 id="modal-title" style="margin:0"></h3>
+      <button class="close-x" aria-label="Close" data-close>✕</button>
+    </div>
+    <div class="modal-body">
+      <div id="modal-media" style="aspect-ratio:16/9;border-radius:14px;border:1px solid var(--border);background:#0b1520 url('https://images.unsplash.com/photo-1536329583941-14287ec6fc4e?q=80&w=1200&auto=format&fit=crop') center/cover"></div>
+      <p id="modal-desc" class="lead"></p>
+      <p id="modal-meta" class="meta"></p>
+      <div id="modal-tags" class="tags"></div>
+      <div id="modal-actions" class="buttons"></div>
+    </div>
+  </dialog>
+
+  <script>
+    // ==========================
+    //  DATA: ADD NEW TITLES HERE
+    // ==========================
+    // To add a new game, push a new object into GAMES with the same fields.
+    // Cards & modals are auto-generated. Keep image URLs square-ish for covers (16:9 renders best).
+    const GAMES = [
+      {
+        id: 'shadows-below',
+        title: 'Shadows Below',
+        status: 'Upcoming', // or 'Released'
+        releaseDate: 'TBA 2026',
+        short: 'A submarine exploration survival game set in the abyssal dark.',
+        long: `Descend into a dynamic undersea world. Balance oxygen, fuel, and hull integrity while navigating sonar pings, treacherous trenches, and bioluminescent life. Salvage, upgrade, and uncover what sleeps beneath.`,
+        platforms: ['PC'],
+        tags: ['Exploration', 'Survival', 'Single‑Player'],
+        images: {
+          cover: 'https://images.unsplash.com/photo-1536329583941-14287ec6fc4e?q=80&w=1200&auto=format&fit=crop',
+          banner: 'https://images.unsplash.com/photo-1529694157878-64a2818090b8?q=80&w=1600&auto=format&fit=crop'
+        },
+        links: {
+          steam: '#',
+          trailer: '#',
+          presskit: '#'
+        }
+      },
+      // Example future title (remove or keep as template)
+      {
+        id: 'project-aster',
+        title: 'Project Aster',
+        status: 'Prototype',
+        releaseDate: 'TBA',
+        short: 'A compact sci‑fi adventure about signal ghosts and shifting gravity.',
+        long: 'An R&D concept exploring traversal puzzles in small, dense spaces. Narrative‑light, vibe‑heavy.',
+        platforms: ['PC'],
+        tags: ['R&D', 'Adventure'],
+        images: {
+          cover: 'https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?q=80&w=1200&auto=format&fit=crop',
+          banner: 'https://images.unsplash.com/photo-1454789548928-9efd52dc4031?q=80&w=1600&auto=format&fit=crop'
+        },
+        links: { steam: '#', trailer: '#', presskit: '#' }
+      }
+    ];
+
+    // --------------
+    // UTILITIES
+    // --------------
+    const $ = (sel, root=document) => root.querySelector(sel);
+    const $$ = (sel, root=document) => Array.from(root.querySelectorAll(sel));
+
+    // Render current year in footer
+    $('#year').textContent = new Date().getFullYear();
+
+    // Build game cards
+    const grid = $('#games-grid');
+    function card(game){
+      const el = document.createElement('article');
+      el.className = 'card';
+      el.setAttribute('role','listitem');
+      el.innerHTML = `
+        <div class="cover" style="background-image:url('${game.images.cover}')" aria-hidden="true"></div>
+        <div class="body">
+          <div class="meta">${game.status} • ${game.releaseDate || ''}</div>
+          <h3 style="margin:.2rem 0 .2rem">${game.title}</h3>
+          <p class="meta">${game.short}</p>
+          <div class="tags">${game.tags.map(t => `<span class='tag'>${t}</span>`).join('')}</div>
+          <div class="actions">
+            <a class="btn" href="#" data-open-game="${game.id}">Details</a>
+            ${game.links.steam && game.links.steam !== '#' ? `<a class="btn primary" href="${game.links.steam}" target="_blank" rel="noopener">Steam</a>`: ''}
+          </div>
+        </div>`;
+      return el;
+    }
+
+    function renderGrid(){
+      grid.innerHTML = '';
+      GAMES.forEach(g => grid.appendChild(card(g)));
+    }
+    renderGrid();
+
+    // Modal logic
+    const modal = $('#game-modal');
+    const setModal = (game) => {
+      $('#modal-title').textContent = game.title;
+      $('#modal-media').style.backgroundImage = `url(${game.images.banner || game.images.cover})`;
+      $('#modal-desc').textContent = game.long || game.short;
+      $('#modal-meta').textContent = `${game.status} • ${game.releaseDate} • ${game.platforms.join(', ')}`;
+      const tags = $('#modal-tags');
+      tags.innerHTML = game.tags.map(t => `<span class='tag'>${t}</span>`).join('');
+      const actions = $('#modal-actions');
+      actions.innerHTML = '';
+      const mkBtn = (label, href, primary=false) => {
+        if(!href || href === '#') return;
+        const a = document.createElement('a');
+        a.href = href; a.target = '_blank'; a.rel = 'noopener';
+        a.className = 'btn' + (primary? ' primary' : '');
+        a.textContent = label; actions.appendChild(a);
+      };
+      mkBtn('Steam', game.links.steam, true);
+      mkBtn('Trailer', game.links.trailer);
+      mkBtn('Press Kit', game.links.presskit);
+    };
+
+    function openGame(id){
+      const game = GAMES.find(g => g.id === id);
+      if(!game) return;
+      setModal(game);
+      modal.showModal();
+    }
+
+    // Open from buttons or hero
+    document.addEventListener('click', (e)=>{
+      const t = e.target.closest('[data-open-game]');
+      if(t){ e.preventDefault(); openGame(t.getAttribute('data-open-game')); }
+      if(e.target.matches('[data-close]')){ modal.close(); }
+    });
+
+    // Formspree AJAX enhancement (works with or without JS)
+    function ajaxifyForm(form, statusEl){
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        statusEl.textContent = 'Sending...';
+        try {
+          const formData = new FormData(form);
+          const res = await fetch(form.action, {
+            method: form.method || 'POST',
+            headers: { 'Accept': 'application/json' },
+            body: formData
+          });
+          if(res.ok){
+            form.reset();
+            statusEl.textContent = 'Thanks! We\'ll be in touch soon.';
+          } else {
+            const data = await res.json().catch(()=>({}));
+            statusEl.textContent = data.errors?.[0]?.message || 'Something went wrong. Please try again.';
+          }
+        } catch(err){
+          statusEl.textContent = 'Network error. Please try again.';
+        }
+      });
+    }
+
+    const contactForm = document.getElementById('contact-form');
+    const contactStatus = document.getElementById('form-status');
+    if(contactForm) ajaxifyForm(contactForm, contactStatus);
+
+    const newsForm = document.getElementById('news-form');
+    const newsStatus = document.getElementById('news-status');
+    if(newsForm) ajaxifyForm(newsForm, newsStatus);
+    $('#news-form').addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const ok = $('#news-email').value.includes('@');
+      $('#news-status').textContent = ok ? 'Subscribed! Please check your inbox.' : 'Please enter a valid email.';
+    });
+
+    // Optional: open Shadows Below modal if arriving with hash #shadows-below
+    if(location.hash && location.hash.replace('#','')){
+      const maybe = location.hash.replace('#','');
+      if(GAMES.find(g=>g.id===maybe)) openGame(maybe);
+    }
+  </script>
 </body>
 </html>
