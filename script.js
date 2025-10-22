@@ -62,6 +62,22 @@
           trailer: '#',
           presskit: '#'
         }
+      },
+            {
+        id: 'kazbook',
+        title: 'Kazs Journey: Creature Handbook',
+        status: 'Released',
+        releaseDate: '5 September 2025',
+        short: 'Discover hidden details about different creatures, locations, items and more from the Kazs Adventure Video Game Series.',
+        long: 'Discover hidden details about different creatures, locations, items and more from the Kazs Adventure Video Game Series. Unlock the full Kazs Adventure Summarised Timeline segmented into 3 different eras for easy reading and understanding. Complete a Kazs Adventure themed Quiz and Wordsearch, you can also use this handbook to take notes in your day to day life or when you next play Kazs Adventure.',
+        platforms: ['Amazon'],
+        tags: ['Book', 'ebook', 'Fantasy', 'Exploration'],
+        images: { cover: 'images/kbook.jpg', banner: 'images/kbook.jpg' },
+        links: {
+          amazon: 'https://www.amazon.co.uk/Kazs-Journey-Creature-Michael-Barlow/dp/B0FJ7FJ34N/ref=sr_1_1?crid=DBZ4Q08SCC6J&dib=eyJ2IjoiMSJ9.AnmZrcWX3eR-F74qNGx_Fb_SQgPKau4TkzgXTz7Oud2d7gwG3VqBqY9-_nv_zuaTYo7zVnARXzaGtzWP2tef8t4GPzec3D-WQfVocISRd76n8eHfG2SbXWaZHanU5Eu_2vedrdDtBGi9GUaiUS-uXcZ9rCOile3bq-RKOd6za2XP3-_gBJesjiSDlq-JSfJK_kvXLMhygnfRFcb37CTN21qMGc-651c_TOmNceATCMI.sMC-I7KO6REIbMRBum6XgIuN9hKqM_UBLOOZgMPR92k&dib_tag=se&keywords=kazs+journey&qid=1761137857&sprefix=kazs+journey%2Caps%2C153&sr=8-1',
+          trailer: '#',
+          presskit: '#'
+        }
       }
     ];
 
