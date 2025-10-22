@@ -12,7 +12,7 @@
         long: `Descend into a dynamic undersea world. Balance oxygen, fuel, and hull integrity while navigating sonar pings, treacherous trenches, and bioluminescent life. Salvage, upgrade, and uncover what sleeps beneath.`,
         platforms: ['PC'],
         tags: ['Exploration', 'Survival', 'Single-Player'],
-        images: { cover: 'shadows.png', banner: 'shadows.png' },
+        images: { cover: 'images/shadows.png', banner: 'images/shadows.png' },
         links: { steam: '#', trailer: '#', presskit: '#' }
       },
       {
@@ -24,7 +24,7 @@
         long: 'Welcome back to the world of Kazs Adventure, after Kaz meets with a terrible fate, he goes looking to reunite with his long lost brother as he adventures through the vast underworld!',
         platforms: ['PC'],
         tags: ['2D', 'Exploration'],
-        images: { cover: 'kaz.jpg', banner: 'kaz2.png' },
+        images: { cover: 'images/kaz.jpg', banner: 'images/kaz2.png' },
         links: {
           steam: 'https://store.steampowered.com/app/2147030/Kazs_Adventure_2_Lost_Souls/',
           trailer: 'https://www.youtube.com/watch?v=I3nUWDgPQtQ',
@@ -40,7 +40,7 @@
         long: 'Enter the New World of Physics Welcome, Testers! Step into Physics World: Evolution, the next-generation sandbox simulation where physics is your playground and curiosity is your guide. As the spiritual successor to 2023s Physics Lab, this evolution delivers more tools, more locations, and a world layered with secrets waiting to be uncovered. New Tools. New Chaos. Push the limits of whats possible using an expanded arsenal of physics tools and environmental objects. Launch explosives or detonate nukes. Shatter jars, rocks, and more with real-time physics interactions. Experiment freely across 5+ diverse testing labs, each with unique environments and potential outcomes. Whether youre stacking, smashing, or sending objects into orbit, your creativity is the only limit. Uncover a Hidden Past Behind the tests lies a deeper mystery — what happened to the world before you arrived? Scattered across the locations are hidden articles, audio logs, and clues that hint at a story far bigger than any single experiment. Piece together the past and uncover the truth buried beneath the surface.',
         platforms: ['PC'],
         tags: ['Casual', 'Adventure', 'Sandbox', 'Puzzle'],
-        images: { cover: 'pw.png', banner: 'pw.png' },
+        images: { cover: 'images/pw.png', banner: 'images/pw.png' },
         links: {
           steam: 'https://store.steampowered.com/app/3383470/Physics_World_Evolution/',
           trailer: 'https://www.youtube.com/watch?v=e1XE6WKvWLM',
@@ -56,7 +56,7 @@
         long: 'The world is crumbling—one forgotten story at a time. Caelen Mor carries the last fragment of the magic that once held reality together. But with every use, it rewrites him. In a land where Wild Stories warp cities into nightmares, memory is outlawed, and reality collapses by the hour, Caelen must navigate a dying world with a dangerous ally at his side: a charming, untrustworthy thief with secrets of his own. As he races against Veridra, the ruthless queen rewriting existence to her own perfection, Caelen must decide: Will he erase the world to survive, or burn to save it?',
         platforms: ['Amazon'],
         tags: ['Book', 'ebook', 'Fantasy'],
-        images: { cover: 'lastfragment.jpg', banner: 'lastfragment.jpg' },
+        images: { cover: 'images/lastfragment.jpg', banner: 'images/lastfragment.jpg' },
         links: {
           amazon: 'https://www.amazon.co.uk/Last-Fragment-Ryan-Hills-ebook/dp/B0F74994VJ/',
           trailer: '#',
