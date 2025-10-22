@@ -122,6 +122,6 @@
 
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
   
-    /* logo in nav */
+
     .logo {display: flex; align-items: center; justify-content: center;}
-    .logo-img {height: 3em; width: auto; vertical-align: middle; object-fit: contain;}
+    .logo-img {height: 3em; width: auto; vertical-align: middle; object-fit: contain;} 
